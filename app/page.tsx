@@ -1,11 +1,11 @@
-import Image from "next/image";
-import { ThemeToggle } from './components/Themetoggle';
+import { DashboardPage } from './dashboard/page';
+
 
 export default function Home() {
   return (
     
     <main>
-     <ThemeToggle/>
+     <DashboardPage/>
     </main>
   );
 }
