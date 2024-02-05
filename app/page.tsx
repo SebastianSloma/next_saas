@@ -5,7 +5,7 @@ export default function Home() {
 				<div className='max-w-3xl mx-auto text-center'>
           <div>
             <span className='w-auto px-6 py-3 rounded-full bg-secondary'>
-              <span>
+              <span className='text-sm font-medium text-primary'>
                 Sort your notes easily
               </span>
 
