@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button';
+import { RegisterLink } from '@kinde-oss/kinde-auth-nextjs/components';
 
 export default function Home() {
 	return (
@@ -15,12 +16,18 @@ export default function Home() {
 							Create Notes with ease
 						</h1>
 
-						<p className='max-w-xl mx-auto mt-8 text-base lg:text-xl text-secondary-foreground'>A place where your team can collaborate and focus on the most important work. Create a doc, connect it to a project, and track tasks – without having to navigate twenty browser tabs.</p>
+						<p className='max-w-xl mx-auto mt-8 text-base lg:text-xl text-secondary-foreground'>
+							A place where your team can collaborate and focus on the most
+							important work. Create a doc, connect it to a project, and track
+							tasks – without having to navigate twenty browser tabs.
+						</p>
 					</div>
 					<div className='flex justify-center max-w-sm mx-auto mt-10'>
-						<Button size='lg' className='w-full'>
-							Sign Up For Free
-						</Button>
+						<RegisterLink>
+							<Button size='lg' className='w-full'>
+								Sign Up For Free
+							</Button>
+						</RegisterLink>
 					</div>
 				</div>
 			</div>
