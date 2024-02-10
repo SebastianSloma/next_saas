@@ -1,7 +1,5 @@
-import React from 'react'
+import React from 'react';
 
-export const DashboardPage = () => {
-  return (
-    <div>Dashboard SaaS</div>
-  )
+export default function DashboardPage() {
+	return <div>Dashboard SaaS</div>;
 }

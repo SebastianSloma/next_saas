@@ -10,7 +10,7 @@ import {
 
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 
-export const NavBar = async () => {
+export async function NavBar() {
 	const { isAuthenticated } = getKindeServerSession();
 	return (
 		<nav className='border-b bg-background h-[10vh] flex items-center'>
@@ -39,4 +39,4 @@ export const NavBar = async () => {
 			</div>
 		</nav>
 	);
-};
+}
