@@ -10,6 +10,7 @@ import {
 
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 
+
 export async function NavBar() {
 	const { isAuthenticated } = getKindeServerSession();
 	return (
@@ -23,7 +24,9 @@ export async function NavBar() {
 					<ThemeToggle />
 					{(await isAuthenticated()) ? (
 						<LogoutLink>
-							<Button>Log out</Button>
+							<Button>
+						
+								Log out</Button>
 						</LogoutLink>
 					) : (
 						<div className='flex items-center gap-x-5'>
