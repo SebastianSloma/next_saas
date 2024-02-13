@@ -55,7 +55,7 @@ export function UserNav({
 						<DropdownMenuItem asChild key={index}>
 							<Link
 								href={item.href}
-								className='w-full flex justify-center items-center'>
+								className='w-full flex justify-between items-center'>
 								{item.name}
 								<span>
 									<item.icon className='w-4 h-4' />
