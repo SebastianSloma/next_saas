@@ -12,7 +12,7 @@ datasource db {
 
 model User {
   id String @id @unique
-  mane String?
+  name String?
   email String @unique
   stripeCustomerId String? @unique
   colorScheme String @default("theme-orange")
