@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import DashboardNav from '../components/DashboardNav';
+import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 
 export default function DashboardLayout({ children }: { children: ReactNode }) {
 	return (
