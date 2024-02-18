@@ -17,7 +17,15 @@ async function getData({
 	lastName: string | undefined | null;
 	profileImage: string | undefined | null;
 }) {
-	const user = await prisma;
+	const user = await prisma.user.findUnique({
+		where: {
+			id: id,
+		},
+		select: {
+			id: true,
+			stripeCustomerId: true,
+		},
+	});
 }
 
 export default async function DashboardLayout({
