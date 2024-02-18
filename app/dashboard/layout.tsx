@@ -26,6 +26,17 @@ async function getData({
 			stripeCustomerId: true,
 		},
 	});
+
+	if (!user) {
+		const name = `$(firstName ?? "") ${lastName ?? ''}`;
+		await prisma.user.create({
+			data: {
+				id: id,
+				email: email,
+				name: name,
+			},
+		});
+	}
 }
 
 export default async function DashboardLayout({
