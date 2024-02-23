@@ -9,7 +9,9 @@ export default function SettingPage() {
 					<p className='text-lg text-muted-foreground'>Your Profile Settings</p>
 				</div>
 			</div>
-            N
+            <Card>
+				
+			</Card>
 		</div>
 	);
 }
