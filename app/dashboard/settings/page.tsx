@@ -1,3 +1,5 @@
+import { Card } from '@/components/ui/card';
+
 export default function SettingPage() {
 	return (
 		<div className='grid items-start gap-8'>
@@ -7,7 +9,7 @@ export default function SettingPage() {
 					<p className='text-lg text-muted-foreground'>Your Profile Settings</p>
 				</div>
 			</div>
-            
+            <Card/>
 		</div>
 	);
 }
