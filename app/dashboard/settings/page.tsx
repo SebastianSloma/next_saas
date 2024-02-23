@@ -1,4 +1,4 @@
-import { Card, CardHeader } from '@/components/ui/card';
+import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function SettingPage() {
 	return (
@@ -12,7 +12,10 @@ export default function SettingPage() {
             <Card>
 				<form action="">
 					<CardHeader>
-						
+						<CardTitle>General Data</CardTitle>
+						<CardDescription>
+							Please provide general information about yourself. Please dont forget to save.
+						</CardDescription>
 					</CardHeader>
 				</form>
 			</Card>
