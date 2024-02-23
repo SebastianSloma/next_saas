@@ -1,4 +1,4 @@
-import { Card } from '@/components/ui/card';
+import { Card, CardHeader } from '@/components/ui/card';
 
 export default function SettingPage() {
 	return (
@@ -10,7 +10,11 @@ export default function SettingPage() {
 				</div>
 			</div>
             <Card>
-				
+				<form action="">
+					<CardHeader>
+						
+					</CardHeader>
+				</form>
 			</Card>
 		</div>
 	);
