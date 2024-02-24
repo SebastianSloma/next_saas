@@ -1,4 +1,4 @@
-import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function SettingPage() {
 	return (
@@ -17,6 +17,11 @@ export default function SettingPage() {
 							Please provide general information about yourself. Please dont forget to save.
 						</CardDescription>
 					</CardHeader>
+					<CardContent>
+						<div className='space-y-2'>
+
+						</div>
+					</CardContent>
 				</form>
 			</Card>
 		</div>
