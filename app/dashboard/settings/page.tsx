@@ -18,23 +18,27 @@ import {
 } from '@/components/ui/select';
 
 import prisma from '@/app/lib/db';
+import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 
-async function getData(userId: string){
+async function getData(userId: string) {
 	const data = await prisma.user.findUnique({
 		where: {
-			id:userId,
+			id: userId,
 		},
-		select:{
+		select: {
 			name: true,
 			email: true,
 			colorScheme: true,
-		}
-	})
+		},
+	});
 
-	return data
+	return data;
 }
 
-export default function SettingPage() {
+export default async function SettingPage() {
+	const { getUser } = getKindeServerSession();
+	const user = await getUser();
+	const data = await getData(user?.id as string);
 	return (
 		<div className='grid items-start gap-8'>
 			<div className='flex items-center justify-between px-2'>
