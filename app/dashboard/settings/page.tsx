@@ -76,12 +76,13 @@ export default async function SettingPage() {
 									id='email'
 									placeholder='Your Email'
 									disabled
+									defaultValue={data?.email as string}
 								/>
 							</div>
 
 							<div className='space-y-1'>
 								<Label>Color Scheme</Label>
-								<Select name='color'>
+								<Select name='color' defaultValue={data?.colorScheme}>
 									<SelectTrigger className='w-full'>
 										<SelectValue placeholder='Select a color' />
 									</SelectTrigger>
