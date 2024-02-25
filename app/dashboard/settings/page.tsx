@@ -65,6 +65,7 @@ export default async function SettingPage() {
 									type='text'
 									id='name'
 									placeholder='Your Name'
+									defaultValue={data?.name ?? undefined}
 								/>
 							</div>
 							<div className='space-y-1'>
