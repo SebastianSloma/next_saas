@@ -1,4 +1,12 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardHeader,
+	CardTitle,
+} from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 
 export default function SettingPage() {
 	return (
@@ -9,17 +17,26 @@ export default function SettingPage() {
 					<p className='text-lg text-muted-foreground'>Your Profile Settings</p>
 				</div>
 			</div>
-            <Card>
-				<form action="">
+			<Card>
+				<form action=''>
 					<CardHeader>
 						<CardTitle>General Data</CardTitle>
 						<CardDescription>
-							Please provide general information about yourself. Please dont forget to save.
+							Please provide general information about yourself. Please dont
+							forget to save.
 						</CardDescription>
 					</CardHeader>
 					<CardContent>
 						<div className='space-y-2'>
-
+							<div className='space-y-1'>
+								<Label>Your Name</Label>
+								<Input
+									name='name'
+									type='text'
+									id='name'
+									placeholder='Your Name'
+								/>
+							</div>
 						</div>
 					</CardContent>
 				</form>
