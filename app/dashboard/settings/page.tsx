@@ -58,7 +58,13 @@ export default function SettingPage() {
 									<SelectContent>
 										<SelectGroup>
 											<SelectLabel>Color</SelectLabel>
-											<SelectItem value='theme'>Green</SelectItem>
+											<SelectItem value='theme-green'>Green</SelectItem>
+											<SelectItem value='theme-blue'>Blue</SelectItem>
+											<SelectItem value='theme-violet'>Violet</SelectItem>
+											<SelectItem value='theme-yellow'>Yellow</SelectItem>
+											<SelectItem value='theme-orange'>Orange</SelectItem>
+											<SelectItem value='theme-red'>Red</SelectItem>
+											<SelectItem value='theme-rose'>Rose</SelectItem>
 										</SelectGroup>
 									</SelectContent>
 								</Select>
