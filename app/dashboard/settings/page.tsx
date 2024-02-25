@@ -2,6 +2,7 @@ import {
 	Card,
 	CardContent,
 	CardDescription,
+	CardFooter,
 	CardHeader,
 	CardTitle,
 } from '@/components/ui/card';
@@ -19,6 +20,7 @@ import {
 
 import prisma from '@/app/lib/db';
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
+import { Button } from '@/components/ui/button';
 
 async function getData(userId: string) {
 	const data = await prisma.user.findUnique({
@@ -102,6 +104,12 @@ export default async function SettingPage() {
 							</div>
 						</div>
 					</CardContent>
+
+					<CardFooter>
+						<Button>
+							Save Now
+						</Button>
+					</CardFooter>
 				</form>
 			</Card>
 		</div>
