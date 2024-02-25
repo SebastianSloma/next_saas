@@ -7,7 +7,32 @@ import {
 } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '@/components/ui/select';
+import {
+	Select,
+	SelectContent,
+	SelectGroup,
+	SelectItem,
+	SelectLabel,
+	SelectTrigger,
+	SelectValue,
+} from '@/components/ui/select';
+
+import prisma from '@/app/lib/db';
+
+async function getData(userId: string){
+	const data = await prisma.user.findUnique({
+		where: {
+			id:userId,
+		},
+		select:{
+			name: true,
+			email: true,
+			colorScheme: true,
+		}
+	})
+
+	return data
+}
 
 export default function SettingPage() {
 	return (
