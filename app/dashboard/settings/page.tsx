@@ -37,6 +37,16 @@ export default function SettingPage() {
 									placeholder='Your Name'
 								/>
 							</div>
+							<div className='space-y-1'>
+								<Label>Your Email</Label>
+								<Input
+									name='email'
+									type='email.'
+									id='email'
+									placeholder='Your Email'
+									disabled
+								/>
+							</div>
 						</div>
 					</CardContent>
 				</form>
