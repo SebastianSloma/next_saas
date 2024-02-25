@@ -7,6 +7,7 @@ import {
 } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 export default function SettingPage() {
 	return (
@@ -48,8 +49,19 @@ export default function SettingPage() {
 								/>
 							</div>
 
-							<div >
-
+							<div className='space-y-1'>
+								<Label>Color Scheme</Label>
+								<Select name='color'>
+									<SelectTrigger className='w-full'>
+										<SelectValue placeholder='Select a color' />
+									</SelectTrigger>
+									<SelectContent>
+										<SelectGroup>
+											<SelectLabel>Color</SelectLabel>
+											<SelectItem value='theme'>Green</SelectItem>
+										</SelectGroup>
+									</SelectContent>
+								</Select>
 							</div>
 						</div>
 					</CardContent>
