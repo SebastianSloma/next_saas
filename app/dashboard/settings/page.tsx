@@ -41,6 +41,11 @@ export default async function SettingPage() {
 	const { getUser } = getKindeServerSession();
 	const user = await getUser();
 	const data = await getData(user?.id as string);
+
+	async function postData(){
+		'use server'
+	}
+
 	return (
 		<div className='grid items-start gap-8'>
 			<div className='flex items-center justify-between px-2'>
