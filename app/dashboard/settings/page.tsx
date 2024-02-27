@@ -42,8 +42,20 @@ export default async function SettingPage() {
 	const user = await getUser();
 	const data = await getData(user?.id as string);
 
-	async function postData(){
-		'use server'
+	async function postData(formData: FormData) {
+		'use server';
+
+		const name = formData.get('');
+
+		await prisma.user.update({
+			where: {
+				id: user?.id,
+			},
+			data: {
+				name: '',
+				colorScheme: '',
+			},
+		});
 	}
 
 	return (
@@ -55,7 +67,7 @@ export default async function SettingPage() {
 				</div>
 			</div>
 			<Card>
-				<form action=''>
+				<form action={postData}>
 					<CardHeader>
 						<CardTitle>General Data</CardTitle>
 						<CardDescription>
@@ -111,9 +123,7 @@ export default async function SettingPage() {
 					</CardContent>
 
 					<CardFooter>
-						<Button>
-							Save Now
-						</Button>
+						<Button>Save Now</Button>
 					</CardFooter>
 				</form>
 			</Card>
