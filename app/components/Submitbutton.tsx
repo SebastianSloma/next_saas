@@ -9,7 +9,7 @@ export function SubmitButton(){
     return(
         <>
         {pending ? (
-            <Button>Please Wait</Button>
+            <Button disabled className='w-fit'>Please Wait</Button>
         ) :(
             <Button type='submit'>Save Now</Button>
         )}
