@@ -22,6 +22,7 @@ import prisma from '@/app/lib/db';
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 import { Button } from '@/components/ui/button';
 import { SubmitButton } from '@/app/components/Submitbutton';
+import { revalidatePath } from 'next/cache';
 
 async function getData(userId: string) {
 	const data = await prisma.user.findUnique({
@@ -58,6 +59,7 @@ export default async function SettingPage() {
 				colorScheme: colorScheme ?? undefined,
 			},
 		});
+		revalidatePath('/','layout')
 	}
 
 	return (
