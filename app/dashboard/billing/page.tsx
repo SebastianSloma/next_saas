@@ -6,7 +6,7 @@ export default function BillingPage() {
 			<Card className='flex flex-col'>
 				<CardContent className='py-8'>
 					<div>
-						<h3>Monthly</h3>
+						<h3 className='inline-flex px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase bg-primary/10 text-primary'>Monthly</h3>
 					</div>
 				</CardContent>
 			</Card>
