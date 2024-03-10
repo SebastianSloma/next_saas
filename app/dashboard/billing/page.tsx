@@ -8,6 +8,9 @@ export default function BillingPage() {
 					<div>
 						<h3 className='inline-flex px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase bg-primary/10 text-primary'>Monthly</h3>
 					</div>
+					<div className='mt-4 flex items-baseline text-6xl font-extrabold'>
+						30€
+					</div>
 				</CardContent>
 			</Card>
 			<iframe
