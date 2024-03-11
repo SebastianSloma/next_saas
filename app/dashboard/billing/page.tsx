@@ -29,6 +29,7 @@ export default function BillingPage() {
 								<div className='flex-shrink-0'>
 									<CheckCircle2 className='h-6 w-6 text-green-500'/>
 								</div>
+								<p className='ml-3 text-base'>{item.name}</p>
 							</li>
 						))}
 					</ul>
