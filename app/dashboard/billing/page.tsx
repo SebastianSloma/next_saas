@@ -1,5 +1,11 @@
 import { Card, CardContent } from '@/components/ui/card';
 
+const featureItems =[
+	{name: 'note number one'},
+	{name: 'note number two'},
+	{name: 'note number three'},
+]
+
 export default function BillingPage() {
 	return (
 		<div className='max-w-md mx-auto space-y-4'>
