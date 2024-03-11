@@ -15,6 +15,11 @@ export default function BillingPage() {
 						Write as many notes as you want for 30€ a Month
 					</p>
 				</CardContent>
+				<div className='flex-1 flex flex-col justify-between px-6 pt-6 pb-8 bg-secondary rounded-lg m-1 space-y-6 sm:p-10 sm:pt-6'>
+					<ul className='space-y-6'>
+
+					</ul>
+				</div>
 			</Card>
 			<iframe
 				src='https://coin360.com/coin-widget?coin=ethereum-eth&utm_source=embed_widget_coin'
