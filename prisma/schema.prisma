@@ -20,12 +20,12 @@ model User {
 }
 
 model Subscription{
-  stripe SubscriptionId String @id unique
+  stripeSubscriptionId String @id @unique
   interval String
   status String
   planId String
   currentPeriodStart Int
   currentPeriodEnd Int
   createdAt DateTime @default(now())
-  updated DateTime @updateAt
+  updated DateTime @updatedAt
 }
