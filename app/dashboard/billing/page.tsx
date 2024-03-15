@@ -11,7 +11,15 @@ const featureItems = [
 
 async function getData() {
 	const data = await prisma.subscription.findUnique({
-		
+		where:{
+			userId: userId,
+		},
+		select:{
+			status:true,
+			user:{
+				stripeCustomerId:true,
+			}
+		}
 	});
 }
 
