@@ -10,7 +10,9 @@ const featureItems = [
 ];
 
 async function getData() {
-	const data = await prisma;
+	const data = await prisma.subscription.findUnique({
+		
+	});
 }
 
 export default function BillingPage() {
