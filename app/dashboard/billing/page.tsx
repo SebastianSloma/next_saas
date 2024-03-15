@@ -21,6 +21,7 @@ async function getData() {
 			}
 		}
 	});
+	return data
 }
 
 export default function BillingPage() {
