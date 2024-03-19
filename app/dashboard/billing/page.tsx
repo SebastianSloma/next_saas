@@ -4,6 +4,8 @@ import { CheckCircle2 } from 'lucide-react';
 import prisma from '@/app/lib/db';
 
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
+import { getStripeSession } from '@/lib/stripe';
+import { redirect } from 'next/dist/server/api-utils';
 
 const featureItems = [
 	{ name: 'note number one' },
@@ -34,8 +36,17 @@ export default async function BillingPage() {
 	const data = await getData(user?.id as string);
 
 	async function createSubscription() {
-		"use server"
-		if(){}
+		'use server';
+		if (!data?.user.stripeCustomerId) {
+			throw new Error('Unable to get customer id');
+		}
+
+		const subscriptionUrl = await getStripeSession({
+			customerId: data.user.stripeCustomerId,
+			domainUrl: 'http://localhost:3000',
+			priceId: process.env.STRIPE_PRICE_ID as string,
+		});
+		return redirect(subscriptionUrl);
 	}
 
 	return (
@@ -65,7 +76,7 @@ export default async function BillingPage() {
 							</li>
 						))}
 					</ul>
-					<form action='' className='w-full'>
+					<form action={createSubscription} className='w-full'>
 						<Button className='w-full'>Buy Today</Button>
 					</form>
 				</div>
