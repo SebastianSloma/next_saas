@@ -6,6 +6,7 @@ import prisma from '@/app/lib/db';
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 import { getStripeSession } from '@/lib/stripe';
 import { redirect } from 'next/dist/server/api-utils';
+import { StripeSubscriptionCreationButton } from '@/app/components/Submitbutton';
 
 const featureItems = [
 	{ name: 'note number one' },
@@ -77,7 +78,7 @@ export default async function BillingPage() {
 						))}
 					</ul>
 					<form action={createSubscription} className='w-full'>
-						<Button className='w-full'>Buy Today</Button>
+						<StripeSubscriptionCreationButton/>
 					</form>
 				</div>
 			</Card>
