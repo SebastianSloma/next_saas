@@ -5,7 +5,7 @@ import prisma from '@/app/lib/db';
 
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 import { getStripeSession } from '@/lib/stripe';
-import { redirect } from 'next/dist/server/api-utils';
+import { redirect } from 'next/navigation';
 import { StripeSubscriptionCreationButton } from '@/app/components/Submitbutton';
 
 const featureItems = [
@@ -38,12 +38,22 @@ export default async function BillingPage() {
 
 	async function createSubscription() {
 		'use server';
-		if (!data?.user.stripeCustomerId) {
+
+		const dbUser = await prisma.user.findUnique({
+			where: {
+				id: user?.id,
+			},
+			select: {
+				stripeCustomerId: true,
+			},
+		});
+
+		if (!dbUser?.stripeCustomerId) {
 			throw new Error('Unable to get customer id');
 		}
 
 		const subscriptionUrl = await getStripeSession({
-			customerId: data.user.stripeCustomerId,
+			customerId: dbUser.stripeCustomerId,
 			domainUrl: 'http://localhost:3000',
 			priceId: process.env.STRIPE_PRICE_ID as string,
 		});
@@ -78,7 +88,7 @@ export default async function BillingPage() {
 						))}
 					</ul>
 					<form action={createSubscription} className='w-full'>
-						<StripeSubscriptionCreationButton/>
+						<StripeSubscriptionCreationButton />
 					</form>
 				</div>
 			</Card>
